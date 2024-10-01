@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>snapps.dev - commissions</title>
+        <link rel="icon" href="/res/img/favicon.gif" type="image/gif">
+        <!-- Imports -->
+        <link href="index.css" rel="stylesheet" type="text/css" media="all">
+        <link href="/res/styles/main.css" rel="stylesheet" type="text/css" media="all">
+        <script src="/res/scripts/js.cookie.min.js"></script>
+        <script src="/res/scripts/global.js"></script>
+        <!-- Embed Stuff -->
+        <meta content="Snapps' Commission Site (+18)" property="og:title" />
+        <meta content="Your one stop shop for everything about commissioning me ❤️" property="og:description" />
+        <meta content="https://snapps.dev/commssions" property="og:url" />
+        <meta content="https://snapps.dev/heroFG.png" property="og:image" />
+        <meta content="#53ff9b" data-react-helmet="true" name="theme-color"/>
+        <meta name="twitter:card" content="summary_large_image">
+    </head>
+<body>
+    <div id="header">         
+        <div id="hero-icon" class="center-vert" style="filter: none; height: 100%; position: relative;" onclick="openTab('/home')">
+            <img style="max-height: 150%;  max-width: 150px" src="/res/img/logoStar.png">
+            <img style="max-height: 150%;  max-width: 150px; background-color: var(--accentColor1);" src="/res/img/logoStarSize.png">
+            <img style="max-height: 150%; max-width: 150px;" src="/res/img/logoText.png">
+        </div>
+        <div onclick="openTab('/commissions/')"><h1>Info</h1></div>
+        <div onclick="openTab('/commissions/terms')"><h1>Terms</h1></div>
+        <div onclick="openTab('/commissions/samples')"><h1>Samples</h1></div>
+        <div onclick="openTab('/commissions/quote')"><h1>Quote</h1></div>
+        <div onclick="openTab('/commissions/faq')"><h1>FAQ</h1></div>
+    </div>
+    <div id="footer"> 
+        <div id="footer-settings"><a onclick="openThemeMenu()">🎨</a></div>
+    </div>
+    <div class="fullscreen-center" id="content">
+            <div style="filter: drop-shadow(0 10px 0px #0005); border: solid 2px var(--borderColor); overflow-y: scroll; max-height: 60vh;">
+                <h1 id="terms" style="font-size: 3em; text-align: center;">Terms of Service</h1>
+                <hr>
+                <h1 id="my-rights">My Rights</h1>
+                <ul>
+                    <li>Cancel the commission</li>
+                    <ul>
+                        <li>Any time</li>
+                        <li>Any/no reason</li>
+                        <li>I'll send last finished section</li>
+                        <li>I'll return unused money </li>
+                    </ul>
+                    <li>Watermark all previews of work</li>
+                </ul>
+                <h1 id="your-rights">Your Rights</h1>
+                <ul>
+                    <li>Ask for a progress report</li>
+                    <li>Cancel the commission</li>
+                    <ul>
+                        <li>Any time</li>
+                        <li>Any/no reason</li>
+                        <li>Receive last finished section</li>
+                        <li>Receive refund of undone work</li>
+                    </ul>
+                    <li>Share previews or the finished work with anyone, anywhere, at anytime as long as I am credited</li>
+                    <li>Use your commission however you see fit as long as <a href="../faq/#how-to-credit">I am credited</a> or my signature is visible </li>
+                </ul>
+
+                <h1 id="the-process">The Process</h1>
+
+                <details>
+                    <summary>1. Submit Commission Form</summary>
+                    <p>Fill out my commission form when I&#39;m open. I'll post announcements and/or change my username to let people know that I'm open.</p>
+                </details>
+
+                <details>
+                    <summary>2. Get Chosen</summary>
+                    <p>Behind the scenes I score client&#39;s ideas by how interested I am in it. From there I&#39;ll reach out to the client with the highest scoring idea.</p>
+                    <p>When I reach out to you via your designated point of contact, I give you three (3) day for a response. If I get none, I&#39;ll mark you as away until either you respond or I run out of slots.</p>
+                    <p>When I run out of slots, I&#39;ll post an announcement via my art galleries or my discord name, though it&#39;s not too late to get picked at this point; I&#39;ll reach out to the next person if slots open up.</p>
+                </details>
+
+                <details>
+                    <summary>3. Discuss Details</summary>
+                    <p>After we confirm contact with can discuss finer details as necessary (references, poses, descriptions) and I&#39;ll send you a quote and invoice for the commission. </p>
+                    <p>It&#39;d be a good idea to tell me what the technically requirements need of the commission. For example, if you&#39;re gonna be posting it to Fur Affinity, they have a max resolution for their uploads.</p>
+                </details>
+
+                <details>
+                    <summary>4. Send Payment</summary>
+                    <h2 id="cash">Cash</h3>
+                    <p>All cash payments/refunds will be done through PayPal.</p>
+                    <p>Payments for the commission can be done all at once or in segments as indicated in the invoice or as described below.</p>
+                    <p>I will only do work on a given segment after payment of that section.</p>
+                    <h2 id="art-trades">Art Trades</h3>
+                    <p>For my artistically-inclined Oomfies, if you (and I) are feeling up to it, we can discuss doing an art trade instead.</p>
+                    <p>Let it be known that I wouldn&#39;t recommend commissioning me if you fully intend on doing an art trade as payment as you will likely be disappointed.</p>
+                </details>
+
+                <details>
+                    <summary>5. I Draw The Thing</summary>
+                    <p>From here, work on the piece in the order previously described. There&#39;s a lot of communication in the beginning as try to get a feel for what you want. There&#39;s usually a good bit of silence as I work but I&#39;ll post updates or ask questions from time-to-time.</p>
+                    <p>Minor changes are free before I start doing the linework. </p>
+                    <p>Major changes may incur additional costs or cancellation of the commission.</p>
+                    <p>Any changes or opinions I present will incur no costs if taken.</p>
+                </details>
+
+                <details>
+                    <summary>6. I Deliver Commission</summary>
+                    <p>When finished, I&#39;ll send a zip file containing media you commissioned. Please note that I do not consider the project file itself a deliverable.</p>
+                    <p>If there are any technical troubles, feel free to contact me and I&#39;ll see what I can do.</p>
+                </details>
+
+                <details>
+                    <summary>7. Commission Posted</summary>
+                    <p>You are free to post any of commission media I send to you anywhere and at anytime as long as <a href="../faq/#how-to-credit">I am credited</a>.</p>
+                    <p>When/If I post your commission, I&#39;ll include your handle(s) of choice (unless you choose to remain anonymous)</p>
+                </details>
+
+            </div>
+            </div>
+    </div>
+    <div class="fullscreen-center" id="bg"></div>
+</body>
+</html>

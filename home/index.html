@@ -19,18 +19,18 @@
     </head>
 <body>
     <div id="header">         
-        <div id="hero-icon" class="center-vert" style="filter: none; height: 100%; position: relative;">
+        <div id="hero-icon" class="center-vert" style="filter: none; height: 100%; position: relative;" onclick="openTab('/home')">
             <img style="max-height: 150%;  max-width: 150px" src="/res/img/logoStar.png">
             <img style="max-height: 150%;  max-width: 150px; background-color: var(--accentColor1);" src="/res/img/logoStarSize.png">
             <img style="max-height: 150%; max-width: 150px;" src="/res/img/logoText.png">
         </div>
-        <div><h1>Art</h1></div>
-        <div><h1>Games</h1></div>
-        <div><h1>Projects</h1></div>
-        <div><h1>Support Me!</h1></div>
+        <div class="wip"><h1>Art</h1></div>
+        <div class="wip"><h1>Games</h1></div>
+        <div class="wip"><h1>Projects</h1></div>
+        <div class="wip"><h1>Support Me!</h1></div>
     </div>
     <div id="footer"> 
-        <div id="footer-settings"><a>🍪</a><a onclick="openThemeMenu()">🎨</a></div>
+        <div id="footer-settings"><a onclick="openThemeMenu()">🎨</a></div>
     </div>
     <div class="fullscreen-center" id="content">
         <div style="filter: drop-shadow(0 10px 0px #0005);     border: solid 2px var(--borderColor);
@@ -43,35 +43,56 @@
                     <div id="badge-title" class="center-vert">
                         <h1>Snapps</h1>
                         <h2>+18 Scalie Propagandist</h2>
-                        <h3>"I think it could be a <i>little</i> bigger."</h3>
+                        <h3 id="quote"></h3>
                     </div>
                 </div>
                 <hr style="width: 100%;">
                 <div id="poc-container" class="center-hori"> 
                     <a class="poc-scroll-button hero-button center-hori" onclick="posScrollLeft()">◀◁</a>
                     <div id="point-of-contact-bar">
-                        <a class="poc-button">email</a>
-                        <a class="poc-button">discord server</a>
-                        <a class="poc-button">bluesky</a>
-                        <a class="poc-button">discord profile</a>
-                        <a class="poc-button">twitter</a>
+                        <a class="poc-button" onclick="copyToClipboard('','lead.dumbass@snapps.dev')">email</a>
+                        <a class="poc-button" onclick="copyToClipboard('Let me know who you are for access!','fA9FwhnaTk')">discord server</a>
+                        <a class="poc-button" onclick="copyToClipboard('','snapps')">discord profile</a>
+                        <a class="poc-button" target="_blank" href="https://x.com/SnappsOwO">twitter</a>
                     </div>
                     <a class="poc-scroll-button hero-button center-hori" onclick="posScrollRight()">▷▶</a>
                 </div>
                 <hr style="width: 100%;">
-                
-                <hr style="width: 100%;">
+                <div id="project-gallery">
+                    <img id="project-image">
+                    <div id="project-desc">
+                    </div>
+                </div>                
             </div>
         </div>
     </div>
     <div class="fullscreen-center" id="bg"></div>
 
     <script>
+
+        //Projects of the day
+        potd=[
+            //Comms
+            ["/res/img/projectBanners/commsBanner250.gif",
+            `<h1>COMMS ARE OPEN</h1>
+            <p>If you've been wanting to get art from me, now is the time.</p>
+            <p>Best of luck getting picked!</p>`,
+            ["NAB A COMMISSION","/commissions"]
+            ]
+        ]
+
+        quotes=[
+            `"I think it could be a <i>little</i> bigger."`,
+            `"I'm not an expert <i>but...</i>"`,
+            `"And why <i>can't</i> snakes have tits?"`
+        ]
+    
+    
+
         function posScrollRight(){
             
             var parent = document.getElementById("point-of-contact-bar")
             pocs = Array.from(document.getElementsByClassName("poc-button"))
-            console.log(parent.offsetWidth)
 
             for(i=0;i<pocs.length;i++){
                 if(pocs[i].offsetLeft+pocs[i].offsetWidth>(parent.offsetWidth+parent.scrollLeft))
@@ -86,7 +107,6 @@
             
             var parent = document.getElementById("point-of-contact-bar")
             pocs = Array.from(document.getElementsByClassName("poc-button"))
-            console.log(parent.offsetWidth)
 
             for(i=pocs.length-1;i>=0;i--){
                 if(pocs[i].offsetLeft<(parent.scrollLeft))
@@ -97,6 +117,24 @@
             }
         }
 
+        function loadProjectOfTheDay(index){
+            var cta;
+            document.getElementById("project-image").src = potd[index][0]
+            document.getElementById("project-desc").innerHTML = potd[index][1]
+            if (potd[index][2] != undefined){
+                cta = document.createElement("div")
+                cta.id = "project-cta"
+                cta.innerHTML = `<h1 class="hero-button" onclick="openTab('`+potd[index][2][1]+`')">`+potd[index][2][0]+`</h1>`
+                document.getElementById("project-desc").appendChild(cta) 
+            }
+        }
+
+        function loadQuote(){
+            document.getElementById("quote").innerHTML = quotes[Math.floor(Math.random() * quotes.length)];
+        }
+
+        loadProjectOfTheDay(0)
+        loadQuote()
     </script>
 </body>
 </html>

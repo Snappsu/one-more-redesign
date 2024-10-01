@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>snapps.dev - commissions</title>
+        <link rel="icon" href="/res/img/favicon.gif" type="image/gif">
+        <!-- Imports -->
+        <link href="index.css" rel="stylesheet" type="text/css" media="all">
+        <link href="/res/styles/main.css" rel="stylesheet" type="text/css" media="all">
+        <script src="/res/scripts/js.cookie.min.js"></script>
+        <script src="/res/scripts/global.js"></script>
+        <!-- Embed Stuff -->
+        <meta content="Snapps' Commission Site (+18)" property="og:title" />
+        <meta content="Your one stop shop for everything about commissioning me ❤️" property="og:description" />
+        <meta content="https://snapps.dev/commssions" property="og:url" />
+        <meta content="https://snapps.dev/heroFG.png" property="og:image" />
+        <meta content="#53ff9b" data-react-helmet="true" name="theme-color"/>
+        <meta name="twitter:card" content="summary_large_image">
+    </head>
+<body>
+    <div id="header">         
+        <div id="hero-icon" class="center-vert" style="filter: none; height: 100%; position: relative;" onclick="openTab('/home')">
+            <img style="max-height: 150%;  max-width: 150px" src="/res/img/logoStar.png">
+            <img style="max-height: 150%;  max-width: 150px; background-color: var(--accentColor1);" src="/res/img/logoStarSize.png">
+            <img style="max-height: 150%; max-width: 150px;" src="/res/img/logoText.png">
+        </div>
+        <div onclick="openTab('/commissions/')"><h1>Info</h1></div>
+        <div onclick="openTab('/commissions/terms')"><h1>Terms</h1></div>
+        <div onclick="openTab('/commissions/samples')"><h1>Samples</h1></div>
+        <div onclick="openTab('/commissions/quote')"><h1>Quote</h1></div>
+        <div onclick="openTab('/commissions/faq')"><h1>FAQ</h1></div>
+    </div>
+    <div id="footer"> 
+        <div id="footer-settings"><a onclick="openThemeMenu()">🎨</a></div>
+    </div>
+    <div class="fullscreen-center" id="content">
+            <div style="filter: drop-shadow(0 10px 0px #0005); border: solid 2px var(--borderColor); overflow-y: scroll; max-height: 60vh;">
+                <h1 id="faq" style="font-size: 3em; text-align: center;">faq</h1>
+                <hr>
+                <h1>What are you willing to draw?</h1>
+                <p>In most cases, I'm alright with drawing anything I've posted online. If you are unsure of any specific thing, I have a non-exaustive list of <a href="https://e621.net/tags">e6 tags</a> that cover a few topics.</p>
+                <input id="kink-search" placeholder="Search for tags...">
+                <taglist id="kink-list" style="min-height:200px; align-items: center;">
+                </taglist>
+                <script>
+                    function shuffle(array) {
+                        let currentIndex = array.length;
+
+                        // While there remain elements to shuffle...
+                        while (currentIndex != 0) {
+
+                            // Pick a remaining element...
+                            let randomIndex = Math.floor(Math.random() * currentIndex);
+                            currentIndex--;
+
+                            // And swap it with the current element.
+                            [array[currentIndex], array[randomIndex]] = [
+                            array[randomIndex], array[currentIndex]];
+                        }
+                    }
+
+                    //f=fav, y=yes, m=maybe, n=no
+                    var kinks=[
+                        ["y","hyper_breasts"],
+                        ["f","huge_breasts"],
+                        ["f","big_breasts"],
+                        ["y","breasts"],
+                        ["f","lactating"],
+                        ["f","huge_butt"],
+                        ["f","big_butt"],
+                        ["m","hyper_butt"],
+                        ["y","anus"],
+                        ["y","puffy_anus"],
+                        ["y","humanoind_penis"],
+                        ["m","equine_penis"],
+                        ["y","tapering_penis"],
+                        ["y","humanoind_pussy"],
+                        ["m","cloaca"],
+                        ["y","balls"],
+                        ["y","big_balls"],
+                        ["f","huge_balls"],
+                        ["m","hyper_balls"],
+                        ["f","scalie"],
+                        ["m","mammal"],
+                        ["m","human"],
+                        ["n","loli"],
+                        ["n","shota"],
+                        ["n","young"],
+                        ["n","gore"],
+                        ["y","weight_gain"],
+                        ["f","slightly_chubby"],
+                        ["y","obese"],
+                        ["m","morbidly_obese"],
+                        ["y","expansion"],
+                        ["y","inflation"],
+                        ["f","size_difference"],
+                        ["f","short stack"],
+                        ["n","feces"],
+                        ["n","waterspots"],
+                        ["m","muscular"],
+                    ]
+
+                    shuffle(kinks)
+
+                    document.getElementById("kink-search").addEventListener("input", (ev)=>{ 
+                        searchKinks(ev.target.value)
+                    })
+
+                    function searchKinks(query) {
+                        regex = new RegExp(query.toLowerCase());
+                        var foundKinks = []
+                        document.getElementById("kink-list").replaceChildren() 
+                        kinks.forEach(element => {
+                            if(regex.test(element[1])){
+                                var tag = document.createElement("tagitem")
+                                tag.innerHTML = "<span>"+ iconify(element[0]) +"</span><span>"+ element[1].replace("_", " ");  +"</span>"
+                                document.getElementById("kink-list").appendChild(tag) 
+                            }
+                        });
+                    }
+
+                    function iconify(text){
+                        switch(text){
+                            case "f": return "⭐"
+                            case "y": return "✔️"
+                            case "m": return "🎲"
+                            case "n": return "🚫"
+                        }
+
+                    }
+
+                    searchKinks("")
+                    
+                </script>
+                <p>Feel free to ask about anything that you are unsure of!</p>
+                <h1 id="how-to-credit">How do I credit you?</h1>
+                <p>All you have to do is post a link to one of my accounts along side the commission media. For your convience, you can click one of the buttons below to copy the link to that account to your clipboard.</p>
+                <taglist id="link-list">
+                    <tagitem style="cursor:pointer" type="twitter" onclick='copyToClipboard("","https://x.com/SnappsOwO");'><span>⭐</span><span>NSFW Twitter</span></tagitem>
+                    <tagitem style="cursor:pointer" type="twitter" onclick='copyToClipboard("","https://x.com/SnappsUwU");'><span></span><span>Personal Twitter</span></tagitem>
+                    <tagitem style="cursor:pointer" type="fa" onclick='copyToClipboard("","https://www.furaffinity.net/user/snappsuwu");'><span></span><span>FurAffinity</span></tagitem>
+                    <tagitem style="cursor:pointer" type="itaku" onclick='copyToClipboard("","https://itaku.ee/profile/snapps");'><span></span><span>Itaku</span></tagitem>
+                    <tagitem style="cursor:pointer" type="bsky" onclick='copyToClipboard("","https://bsky.app/profile/snappsu.bsky.social");'><span></span><span>Bluesky</span></tagitem>
+                    <tagitem style="cursor:pointer" type="snappsdev" onclick='copyToClipboard("","https://snapps.dev");'><span></span><span>Website</span></tagitem>
+                </taglist>
+            </div>
+        </div>
+    </div>
+    <div class="fullscreen-center" id="bg"></div>
+</body>
+</html>

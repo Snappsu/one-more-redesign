@@ -14,7 +14,7 @@
   --backgroundColor: #000;
   --backgroundColor2: #000;
   --backgroundColor2Acc: #000;
-  --accentColor1: #f00;
+  --accentColor1: #00ffff;
   --textColor: #000;
   --borderColor: #000;
   --background: #000;
@@ -54,6 +54,11 @@ i {
 hr {
   color: var(--backgroundColor2Acc);
   margin: 20px 0;
+}
+
+a, a:visited {
+  color: inherit;
+  text-decoration: none;
 }
 
 /* Positioning + Layout */
@@ -109,8 +114,9 @@ hr {
 /* Window Divs */
 
 .window-div {
-  background: var(--backgroundColor2);;
-  border: solid 2px var(--borderColor);;
+  background: var(--backgroundColor2);
+  color: var(--textColor);;
+  border: solid 2px var(--borderColor);
   margin: .5em;
   max-width: 500px;
   width: 500px;
@@ -177,7 +183,6 @@ div#hero-icon:active > *:nth-child(3) {
 
 .hero-button {
   background: var(--backgroundColor2);
-  color: var(--textColor);
   padding: .5em 1em;
   border-radius: 10px;
   border: solid 4px var(--borderColor);
@@ -185,11 +190,13 @@ div#hero-icon:active > *:nth-child(3) {
   margin-top: 0px;
   margin-bottom: 10px;
   transition: .1s;
+  text-align: center;
 }
 
 .hero-button:hover {
   border-bottom: solid 18px var(--borderColor);
   margin-top: 2px;
+  background-color: var(--backgroundColor2Acc);
 }
 .hero-button:active {
   border-bottom: solid 12px var(--borderColor);
@@ -233,6 +240,15 @@ background: var(--backgroundColor2);
 #header > *:hover {
 background:  var(--backgroundColor2Acc);
 padding-top: 1%;
+}
+
+#header .wip h1 {
+  color: var(--accentColor1) !important;
+  background-color:  var(--accentColor1);
+  stroke-width: 0;
+  padding: .1em;
+  -webkit-text-stroke-width: .025em;
+  -webkit-text-stroke-color: var(--accentColor1);;
 }
 
 /* Footer */
@@ -297,4 +313,28 @@ input[type="range"]::-moz-range-track{
   background: var(--textColor);
  }
 
- 
+ /* Taglist + Tagitems */
+ taglist {
+  max-height: 200px;
+  overflow: auto;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 1em;
+  display: flex;
+  background: var(--backgroundColor2Acc);
+  flex-wrap: wrap;
+  justify-content: center ;
+}
+
+tagitem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  border-radius: 1em;
+  padding: .5em 1em;
+  height: 1em;
+  line-height: 0;
+  background-color: var(--backgroundColor2);
+  color: var(--textColor);
+}

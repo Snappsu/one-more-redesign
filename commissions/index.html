@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>snapps.dev - commissions</title>
+        <link rel="icon" href="/res/img/favicon.gif" type="image/gif">
+        <!-- Imports -->
+        <link href="index.css" rel="stylesheet" type="text/css" media="all">
+        <link href="/res/styles/main.css" rel="stylesheet" type="text/css" media="all">
+        <script src="/res/scripts/js.cookie.min.js"></script>
+        <script src="/res/scripts/global.js"></script>
+        <script src="/res/scripts/loadCommData.js"></script>
+        <!-- Embed Stuff -->
+        <meta content="Snapps' Commission Site (+18)" property="og:title" />
+        <meta content="Your one stop shop for everything about commissioning me ❤️" property="og:description" />
+        <meta content="https://snapps.dev/commssions" property="og:url" />
+        <meta content="https://snapps.dev/heroFG.png" property="og:image" />
+        <meta content="#53ff9b" data-react-helmet="true" name="theme-color"/>
+        <meta name="twitter:card" content="summary_large_image">
+    </head>
+<body>
+    <div id="header">         
+        <div id="hero-icon" class="center-vert" style="filter: none; height: 100%; position: relative;" onclick="openTab('/home')">
+            <img style="max-height: 150%;  max-width: 150px" src="/res/img/logoStar.png">
+            <img style="max-height: 150%;  max-width: 150px; background-color: var(--accentColor1);" src="/res/img/logoStarSize.png">
+            <img style="max-height: 150%; max-width: 150px;" src="/res/img/logoText.png">
+        </div>
+        <div onclick="openTab('/commissions/')"><h1>Info</h1></div>
+        <div onclick="openTab('/commissions/terms')"><h1>Terms</h1></div>
+        <div onclick="openTab('/commissions/samples')"><h1>Samples</h1></div>
+        <div onclick="openTab('/commissions/quote')"><h1>Quote</h1></div>
+        <div onclick="openTab('/commissions/faq')"><h1>FAQ</h1></div>
+    </div>
+    <div id="footer"> 
+        <div id="footer-settings"><a onclick="openThemeMenu()">🎨</a></div>
+    </div>
+    <div class="fullscreen-center" id="content">
+            <div style="filter: drop-shadow(0 10px 0px #0005);     border: solid 2px var(--borderColor);">
+                <h1>Commissions Are Currently...</h1>
+                <h1 id="available-header">...</h1>
+                <hr>
+                <h1>Available For:</h1>
+                <taglist id="available-for-header">
+                </taglist>
+                <hr>
+                <div class="button-bar">
+                    <h1 class="hero-button" onclick="openTab('samples')">View Samples</h1>
+                    <h1 class="hero-button" onclick="openTab('https://forms.gle/AxpsKEq9QwhdAcZK8','_blank')">Fill Out A Form</h1>
+                </div>
+            </div>
+    </div>
+    <div class="fullscreen-center" id="bg"></div>
+    <script>
+        loadAvailable("open")
+    </script>
+</body>
+</html>

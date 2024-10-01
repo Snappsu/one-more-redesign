@@ -1,0 +1,21 @@
+#content > div {
+    padding: 25px;
+    width: 500px;
+    color: var(--textColor);
+    background: var(--backgroundColor2);
+}
+
+.button-bar {
+    display: flex;
+    flex-direction: row;
+}
+
+.button-bar > * {
+margin: 10px;
+}
+
+#available-header {
+    font-size: 3em;
+    color: var(--accentColor1);
+    text-align: center;
+}

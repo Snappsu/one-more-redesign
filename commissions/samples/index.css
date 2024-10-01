@@ -1,0 +1,53 @@
+#content > div {
+    padding: 25px;
+    width: 500px;
+    color: var(--textColor);
+    background: var(--backgroundColor2);
+}
+
+.button-bar {
+    display: flex;
+    flex-direction: row;
+}
+
+.button-bar > * {
+margin: 10px;
+}
+
+#available-header {
+    font-size: 3em;
+    color: var(--accentColor1);
+    text-align: center;
+}
+
+gallery { 
+    height: 380px;
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    width: 100%;
+    background: var(--backgroundColor);
+    border-radius: 10px;
+    border: solid 2px var(--borderColor);
+  }
+  
+  .gallery-slot {
+    padding: 20px;
+  }
+  
+  gallery img {
+    height: 250px;
+    image-rendering: optimizeQuality;
+    filter: drop-shadow(0 0 5px #000);
+  }
+
+
+  gallery span {
+    text-align: center;
+    display: block;
+    padding: .25em 0;
+    font-size: 2em;
+    width: 100%;
+    height:.6em;
+  }

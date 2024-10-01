@@ -8,9 +8,9 @@ var openMenu;
     //BG color, BG Image,bg Texture,TEXT, BG2, BGAc, Ac, Border color,
 var themes = {
     "dark":["#000","standard","pcb","#eee","#333","#444","acc","#000"],
-    "light":["#fff","standard","pcb","#000","#fff","#ddd","acc","#000"],
+    "light":["#ddd","standard","pcb","#000","#fff","#ddd","acc","#000"],
     "cobalt":["#2F4858","standard","pcb","#eee","#33658A","#86BBD8","#F6AE2D","#000"],
-    "qu4zar":["#991133","url(/res/img/bg/qu4zar.png)","","#eee","#fff5","#fff","#ff8833","#000"],
+    "qu4zar":["#991133","url(/res/img/bg/qu4zar.png)","","#eee","#161e2a","#3a404b","#ff8833","#000"],
 }
 
 standardBG=  "linear-gradient(125deg, var(--textColor) 10%, var(--accentColor1) 9%, rgba(0,0,0,0) 10%, var(--accentColor1) 10%, var(--accentColor1) 15%, var(--backgroundColor) 15%, var(--backgroundColor) 85%, var(--accentColor1) 85%, var(--accentColor1) 90%, var(--textColor) 90%) "
@@ -43,6 +43,10 @@ function loadTheme(){
     
 }
 
+function openTab(url,target= "_self"){
+ window.open(url,target).focus();
+}
+
 function openThemeMenu(){
 
     if(document.getElementsByClassName("menu")[0]!=undefined) return false
@@ -58,6 +62,7 @@ function openThemeMenu(){
                 <span onclick="changeTheme('auto')">🕰️</span>
                 <span onclick="changeTheme('dark')">🌑</span>
                 <span onclick="changeTheme('cobalt')">🛳️</span>
+                <span onclick="changeTheme('qu4zar')">🌌</span>
             </div>
             <a class="hero-button" id="menu-close-button" onclick="closeMenu(event)">CLOSE</a>
         </div>
@@ -76,7 +81,6 @@ document.body.appendChild(openMenu)
         sliderBG += color+" "+(i/totalAccents)*100+"%,"
     });
     sliderBG = sliderBG.slice(0,sliderBG.length-1) + ")"
-    console.log(sliderBG)
     document.getElementById("theme-option-accent").min=0
     document.getElementById("theme-option-accent").max=accents.length-1
 
@@ -106,11 +110,7 @@ function changeTheme(themeID){
             Cookies.set('theme',themeID, { sameSite: 'strict' })
         }    
     }
-    
-
-
-    console.log(theme[2])
-    bg = theme[1];
+        bg = theme[1];
     accent = theme[6]
     texture = theme[2]
     if (theme[1]=="standard") bg = theme[0] + " " +standardBG; 
@@ -137,6 +137,11 @@ function changeTheme(themeID){
 function closeMenu(event){
     if(event.target == document.getElementsByClassName("menu")[0]) openMenu.replaceWith("")
     if(event.target == document.getElementById("menu-close-button")) openMenu.replaceWith("")
+}
+
+function copyToClipboard(message, textToCopy){
+    message += " Make sure you copy it before closing this!"
+    prompt(message, textToCopy)
 }
 
 loadTheme();

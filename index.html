@@ -38,8 +38,8 @@
     </div>
 
     <script>
-        if (Cookies.get('nsfw')=="true") {
-            navigator.s
+        if (Cookies.get('nsfwConsent')=="true") {
+            window.open("/home/","_self")
         }
 
         var nsfwWarn = `
@@ -53,11 +53,11 @@
             `
 
         var cookieWarn = `
-            <p>Before you get going this site uses cookies purely for remebering site preferences and date. No 3rd-party or serverside shenanigans going on, I swear on my hoard.</p>
+            <p>Before you get going, this site uses cookies to function purely for remebering site preferences and date. No 3rd-party or serverside shenanigans going on, I swear on my hoard.</p>
             <p>That said it is completely up to you whether or not this site saves those cookies to your computer. (You can change your decision later using the cookie emoji on the next page.)</p>
             <div class="center-hori">
                 <a class="hero-button" id="accept-button" onclick="yesCookies()"><h1 style="font-size: 2em;">omg i love cookies!</h1></a>
-                <a class="hero-button" id="accept-button" onclick="noCookies()"><h1 style="font-size: 2em;">nah im good!</h1></a>
+                <a class="hero-button" id="accept-button" onclick="openTab('https://hmpg.net/')"><h1 style="font-size: 2em;">nah im good!</h1></a>
             </div>
             `
             document.getElementById("caution-content").innerHTML = nsfwWarn;

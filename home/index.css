@@ -74,3 +74,51 @@ padding: 10px;    background-color: var(--backgroundColor2Acc);
     border: solid 2px var(--borderColor);
     border-radius: 10px;
 }
+
+#project-gallery {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+display: flex;
+
+}
+
+#project-gallery > * {
+    width: 100%;
+}
+
+#project-image {
+    border: solid 3px var(--borderColor);
+    border-radius: 10px;
+}
+
+#project-desc {
+    position: relative;
+    padding: 0 1em;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#project-desc > *{
+    width: 100%;
+    text-align: center;
+}
+
+#project-desc h1 {
+    font-size: 1.5em;
+}
+
+#project-cta {
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    justify-content: center;
+    display: flex;
+}
+
+#project-cta > *{
+    margin: 0 5px;
+    font-size: 1em !important;
+padding: .2em 1em;
+}
