@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>snapps.dev</title>
+        <link rel="icon" href="/res/img/favicon.gif" type="image/gif">
+        <!-- Imports -->
+        <link href="index.css" rel="stylesheet" type="text/css" media="all">
+        <link href="/res/styles/main.css" rel="stylesheet" type="text/css" media="all">
+        <script src="/res/scripts/js.cookie.min.js"></script>
+        <script src="/res/scripts/global.js"></script>
+        <!-- Embed Stuff -->
+        <meta content="snapps.dev" property="og:title">
+        <meta content="Spreading scalie propaganda since 2020" property="og:description">
+        <meta content="https://snapps.dev/" property="og:url">
+        <meta content="/res/img/icon.png" property="og:image">
+        <meta content="#53ff9b" data-react-helmet="true" name="theme-color">
+    </head>
+<body>
+    <div id="header">         
+        <div id="hero-icon" class="center-vert" style="filter: none; height: 100%; position: relative;">
+            <img style="max-height: 150%;  max-width: 150px" src="/res/img/logoStar.png">
+            <img style="max-height: 150%;  max-width: 150px; background-color: var(--accentColor1);" src="/res/img/logoStarSize.png">
+            <img style="max-height: 150%; max-width: 150px;" src="/res/img/logoText.png">
+        </div>
+        <div><h1>Art</h1></div>
+        <div><h1>Games</h1></div>
+        <div><h1>Projects</h1></div>
+        <div><h1>Support Me!</h1></div>
+    </div>
+    <div id="footer"> 
+        <div id="footer-settings"><a>🍪</a><a onclick="openThemeMenu()">🎨</a></div>
+    </div>
+    <div class="fullscreen-center" id="content">
+        <div style="filter: drop-shadow(0 10px 0px #0005);     border: solid 2px var(--borderColor);
+">
+            <div id="badge" class="center-vert">
+                <div class="hori">
+                    <div id="badge-icon" class="center-vert">
+                        <img src="/res/img/badgeIcon1.gif">
+                    </div>
+                    <div id="badge-title" class="center-vert">
+                        <h1>Snapps</h1>
+                        <h2>+18 Scalie Propagandist</h2>
+                        <h3>"I think it could be a <i>little</i> bigger."</h3>
+                    </div>
+                </div>
+                <hr style="width: 100%;">
+                <div id="poc-container" class="center-hori"> 
+                    <a class="poc-scroll-button hero-button center-hori" onclick="posScrollLeft()">◀◁</a>
+                    <div id="point-of-contact-bar">
+                        <a class="poc-button">email</a>
+                        <a class="poc-button">discord server</a>
+                        <a class="poc-button">bluesky</a>
+                        <a class="poc-button">discord profile</a>
+                        <a class="poc-button">twitter</a>
+                    </div>
+                    <a class="poc-scroll-button hero-button center-hori" onclick="posScrollRight()">▷▶</a>
+                </div>
+                <hr style="width: 100%;">
+                
+                <hr style="width: 100%;">
+            </div>
+        </div>
+    </div>
+    <div class="fullscreen-center" id="bg"></div>
+
+    <script>
+        function posScrollRight(){
+            
+            var parent = document.getElementById("point-of-contact-bar")
+            pocs = Array.from(document.getElementsByClassName("poc-button"))
+            console.log(parent.offsetWidth)
+
+            for(i=0;i<pocs.length;i++){
+                if(pocs[i].offsetLeft+pocs[i].offsetWidth>(parent.offsetWidth+parent.scrollLeft))
+                {
+                    pocs[i].scrollIntoView({behavior: "smooth"})
+                    break
+                }
+            }
+        }
+
+        function posScrollLeft(){
+            
+            var parent = document.getElementById("point-of-contact-bar")
+            pocs = Array.from(document.getElementsByClassName("poc-button"))
+            console.log(parent.offsetWidth)
+
+            for(i=pocs.length-1;i>=0;i--){
+                if(pocs[i].offsetLeft<(parent.scrollLeft))
+                {
+                    pocs[i].scrollIntoView({behavior: "smooth"})
+                    break
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

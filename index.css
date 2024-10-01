@@ -1,0 +1,23 @@
+#caution-window {
+    opacity: .8;
+    transition: .2s;
+}
+
+#caution-window:hover {
+    opacity: 1;
+    scale: 1.025;
+}
+
+
+@keyframes refreshWindow{
+    0% {opacity: 1; transform: scaleY(1); max-height: 500px;}
+    20% {opacity: 0; transform: scaleY(1);  max-height: 500px;}
+    40% {opacity: 0; transform: scaleY(0);  max-height: 0;}
+    60% {opacity: 0; transform: scaleY(0);  max-height: 0;}
+    80% {opacity: 0; transform: scaleY(1);  max-height: 500px;}
+    100% {opacity: 1; transform: scaleY(1);  max-height: 500px;}
+}
+
+.hero-button {
+    margin: 5px;
+}

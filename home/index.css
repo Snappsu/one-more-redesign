@@ -1,0 +1,76 @@
+#badge {
+    padding: 25px;
+    width: 500px;
+    color: var(--textColor);
+    background: var(--backgroundColor2);
+}
+
+#badge-icon {    
+    margin-right: 1em;
+
+}
+
+#badge-title >*{
+    width: 100%;
+}
+
+
+#badge-icon img{
+    border-radius: 20%;
+    height: 80%;
+    border-top: solid 5px var(--backgroundColor2Acc) ;
+
+}
+
+#poc-container{
+    max-width: 480px;
+}
+
+#point-of-contact-bar{
+    position: relative;
+    background: #0005;
+    display: flex;
+    align-items: center;
+    width: 80%;
+    border: solid 2px var(--borderColor);
+    border-radius: 10px;
+    overflow-x: hidden;
+    
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+#point-of-contact-bar > *{
+    font-family: hero;
+    white-space: nowrap;
+height: 100%;
+padding: 10px;    background-color: var(--backgroundColor);
+    border-left: solid .1px var(--textColor);
+}
+
+
+#point-of-contact-bar > *:hover{
+    font-family: hero;
+    white-space: nowrap;
+height: 100%;
+padding: 10px;    background-color: var(--backgroundColor2Acc);
+    border-left: solid .1px var(--textColor);
+}
+
+
+#point-of-contact-bar > *:first-child{
+    border-left: none;
+}
+
+.poc-scroll-button {
+    width: 10%;
+        background: #0005;
+    padding: 10px;
+    margin: 10px;
+    scroll-margin: 10px;
+    border: solid 2px var(--borderColor);
+    border-radius: 10px;
+}

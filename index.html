@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>snapps.dev</title>
+    <link rel="icon" href="res/img/favicon.gif" type="image/gif">
+    <!-- Imports -->
+    <link href="index.css" rel="stylesheet" type="text/css" media="all">
+    <link href="res/styles/main.css" rel="stylesheet" type="text/css" media="all">
+    <script src="res/scripts/js.cookie.min.js"></script>
+    <script src="res/scripts/global.js"></script>
+    <!-- Embed Stuff -->
+    <meta content="snapps.dev" property="og:title">
+    <meta content="Spreading scalie propaganda since 2020" property="og:description">
+    <meta content="https://snapps.dev/" property="og:url">
+    <meta content="res/img/icon.png" property="og:image">
+    <meta content="#53ff9b" data-react-helmet="true" name="theme-color">
+</head>
+<body>
+    <div class="fullscreen-center" id="bg"></div>
+    <div class="fullscreen-center">
+        <div id="hero-icon" style="width: 400px; height: 400px; position: relative; margin-bottom: -100px;">
+            <img src="/res/img/logoStar.png">
+            <img style=" background-color: var(--accentColor1);" src="/res/img/logoStarSize.png">
+            <img src="/res/img/logoText.png">
+        </div>
+        <div id="caution-window" class="window-div" style="z-index: 1;">
+            <div>
+                <h1>C A U T I O N</h1>
+            </div>
+            <div id="caution-content">
+                <p> Hate to burst your scriptless bubble, but this site sorta kinda, kinda sorta relies heavily on JavaScript. If you would be so kind as to enable it, I would greatly appreciate it. 💖 </p>
+                <div class="center-hori"><a class="hero-button" id="accept-button"><h1 style="font-size: 2em;">fine, i guess</h1></a></div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        if (Cookies.get('nsfw')=="true") {
+            navigator.s
+        }
+
+        var nsfwWarn = `
+            <p>Here you will find serveral, <b>obscene</b>, <b>scandalous</b>, and perhaps even <b>blaphemic</b> oddities like:</p>
+            <span>- Scalies</span><br>
+            <span>- Anthropomorphic Scalies</span><br>
+            <span>- Anthropomorphic Scalies with Sexual Organs</span><br>
+            <span>- Anthropomorphic Scalies with Sexual Organs in Weird Situations</span><br>
+            <p>By entering this website you acknowledge that you are <b>over 18 years old</b> and <b>willing to see such stuff</b>. Capiche?</p>
+            <div class="center-hori"><a class="hero-button" id="accept-button" onclick="nextStep()"><h1 style="font-size: 2em;">yeah, sure, whatever</h1></a></div>
+            `
+
+        var cookieWarn = `
+            <p>Before you get going this site uses cookies purely for remebering site preferences and date. No 3rd-party or serverside shenanigans going on, I swear on my hoard.</p>
+            <p>That said it is completely up to you whether or not this site saves those cookies to your computer. (You can change your decision later using the cookie emoji on the next page.)</p>
+            <div class="center-hori">
+                <a class="hero-button" id="accept-button" onclick="yesCookies()"><h1 style="font-size: 2em;">omg i love cookies!</h1></a>
+                <a class="hero-button" id="accept-button" onclick="noCookies()"><h1 style="font-size: 2em;">nah im good!</h1></a>
+            </div>
+            `
+            document.getElementById("caution-content").innerHTML = nsfwWarn;
+
+        function nextStep(){
+            document.getElementById("caution-content").style.animation = "refreshWindow 2s"
+            setTimeout(()=>{
+                document.getElementById("caution-content").innerHTML = cookieWarn;
+            }, 1000);
+        }
+
+        function yesCookies(){
+            Cookies.set('cookieConsent','true', { sameSite: 'strict' })
+            Cookies.set('nsfwConsent','true', { sameSite: 'strict' })
+            nextNextStep()
+        }
+
+        function noCookies(){
+            nextNextStep()
+        }
+
+        function nextNextStep(){
+            window.location.href = "/home";
+        }
+    </script>
+
+</body>
+</html>
